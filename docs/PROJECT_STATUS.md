@@ -39,7 +39,18 @@ Source: `backend/artifacts/metrics.json` and `backend/artifacts/confusion_matrix
 - No hosted CI workflow exists.
 - No ESLint script is configured.
 - A physical touchscreen was not used. Drawing uses pointer events and was checked with mouse pointer input.
-- Browser UI screenshots were not saved into the repository.
+- No public deployment. GitHub Pages cannot run the model. Render, Railway, Fly, and Vercel were not authenticated, and the local Docker engine was not running.
+
+## Screenshots
+
+Captured on 17 October 2026 from http://127.0.0.1:5174 with the API on port 8010. A drawn stroke was predicted as 1 at 100.0%.
+
+- `docs/screenshots/overview.png`
+- `docs/screenshots/recognition-studio.png`
+- `docs/screenshots/prediction-details.png`
+- `docs/screenshots/model-evaluation.png`
+- `docs/screenshots/prediction-explorer.png`
+- `docs/screenshots/mobile-overview.png`
 
 ## How to start
 

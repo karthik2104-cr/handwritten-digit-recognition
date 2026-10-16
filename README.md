@@ -48,21 +48,27 @@ flowchart LR
 
 ## Screenshots
 
-The evaluation figures below were written by `scripts/train.py` on 16 October 2026. They are plots of the saved test predictions, not browser captures.
+These images were captured from the running Neural Studio app. The API was `http://127.0.0.1:8010` and the UI was `http://127.0.0.1:5174`. The recognition shot is a stroke drawn on the canvas. The model returned digit 1 at 100.0% confidence. The explorer shows real misclassified images from the saved test subset.
+
+![Overview dashboard with accuracy, F1, inference time, and the model comparison](docs/screenshots/overview.png)
+
+![Recognition Studio after drawing a digit, with the prediction and confidence](docs/screenshots/recognition-studio.png)
+
+![Preprocessing stages and the 28 by 28 pixel inspector for the same prediction](docs/screenshots/prediction-details.png)
+
+![Model evaluation with the held-out metrics and confusion matrix](docs/screenshots/model-evaluation.png)
+
+![Prediction Explorer filtered to misclassified test images](docs/screenshots/prediction-explorer.png)
+
+![Overview on a 390 pixel wide layout](docs/screenshots/mobile-overview.png)
+
+The training script also wrote these plots from the same test predictions:
 
 ![Confusion matrix from the held-out test predictions](reports/confusion_matrix.png)
 
 ![Accuracy, precision, recall, and F1 for both models](reports/model_comparison.png)
 
 ![Per-digit F1 for the deployed random forest](reports/per_digit_f1.png)
-
-Browser screenshots of Neural Studio are not in this repository. Useful captures to add later, under `docs/screenshots/`, are:
-
-- Overview, with the live accuracy cards and connection status
-- Recognition Studio after a drawn digit, including the pipeline
-- Model Evaluation, focused on the confusion matrix
-- Prediction Explorer for one misclassified cell
-- The same pages in the light theme and at a phone width
 
 ## Tech stack
 
@@ -217,6 +223,10 @@ npm run dev
 That serves the UI at [http://127.0.0.1:5174](http://127.0.0.1:5174) and the API at [http://127.0.0.1:8010](http://127.0.0.1:8010). A health check against that API returned `status: ok` with `RandomForestClassifier` loaded.
 
 `docker-compose.yml` describes the same two processes on ports 8000 and 5173. Compose was not executed in the recorded verification, so this README does not claim that the containers build or start.
+
+## Live demo
+
+There is no public URL yet. GitHub Pages can serve the static UI, but it cannot run the FastAPI process or the saved random forest. Render, Railway, Fly, and Vercel were not signed in on this machine, and the Docker engine was not running, so a hosted deploy was not started. See `docs/PROJECT_STATUS.md` for the exact gap.
 
 ## API
 
