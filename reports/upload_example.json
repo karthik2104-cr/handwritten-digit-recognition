@@ -1,0 +1,5 @@
+{
+  "actual": 2,
+  "predicted_during_evaluation": 2,
+  "description": "Nearest-neighbor upscale of one MNIST test image for the upload control."
+}
